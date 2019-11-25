@@ -3,7 +3,20 @@ import { Row, Col } from 'react-bootstrap';
 
 import ProductBox from '../product-box/ProductBox';
 
-const ProductList = () => {
+const ProductList = ({ items }) => {
+  const renderProducts = () =>
+    items.map(i => (
+      <Col xs={6} key={i.id} className="mb-2 border">
+        <ProductBox
+          itemName={i.name}
+          itemPrice={i.price}
+          itemLikes={i.like_count}
+          itemIsSoldOut={i.is_sold_out}
+          itemImg={i.image}
+        />
+      </Col>
+    ));
+
   return (
     <Row>
       <Col xs={12}>
@@ -11,10 +24,7 @@ const ProductList = () => {
       </Col>
       <Col xs={12}>
         <Row>
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
+          {renderProducts()}
         </Row>
       </Col>
     </Row>
