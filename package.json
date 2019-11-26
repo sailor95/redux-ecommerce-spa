@@ -1,5 +1,9 @@
 {
   "name": "4f40ccab74df729b3bb627d69dd0b0d39e05e260",
+  "author": {
+    "name": "Tsung Wei Huang (David Huang)",
+    "url": "https://www.linkedin.com/in/tsung-wei-huang-217561179/"
+  },
   "scripts": {
     "serve": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
