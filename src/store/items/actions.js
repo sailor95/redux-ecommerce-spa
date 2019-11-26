@@ -28,7 +28,7 @@ const actions = {
   getItemById: id => async dispatch => {
     const response = await itemsApi.getItemById(id);
 
-    if (!!response) {
+    if (!!response && !isNaN(id)) {
       dispatch({
         type: ACTION_TYPES.GET_ITEM_BY_ID_SUCCESS,
         payload: response

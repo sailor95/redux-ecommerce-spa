@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import actions from '../../store/items/actions';
+import NotFoundPage from './NotFoundPage';
 
 class DetailPage extends React.Component {
   componentDidMount() {
@@ -21,6 +22,10 @@ class DetailPage extends React.Component {
       price,
       shipping_fee
     } = this.props.item;
+
+    if (!name) {
+      return <NotFoundPage id={id} />
+    }
 
     return (
       <Container>
@@ -41,7 +46,7 @@ class DetailPage extends React.Component {
       </Container>
     );
   }
-};
+}
 
 const mapStateToProp = state => ({
   item: state.items.currentItem

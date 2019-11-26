@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBrowserHistory } from 'history';
-import { Router, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import HomePage from '../home/HomePage';
@@ -16,7 +16,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/product/:id" component={DetailPage} />
-        {/* TODO: Add "Not Found" page */}
+        <Redirect from="/*" to="/" />
       </Switch>
     </Router>
   </Provider>
