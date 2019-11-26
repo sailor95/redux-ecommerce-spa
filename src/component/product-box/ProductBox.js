@@ -1,6 +1,11 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
+import classes from './productBox.module.css';
+import currencySeparator from '../../services/helpers/currencySeparator';
 
 const ProductBox = ({
   itemId,
@@ -13,18 +18,40 @@ const ProductBox = ({
 }) => {
   return (
     <Col
-      xs={6}
-      className="mb-2 border"
+      xs={12}
+      sm={6}
+      className="mb-3"
       onClick={() => history.push(`/product/${itemId}`)}
     >
-      <h5 className="border">
-        Product Box
-      </h5>
-      <img width="100%" src={`${itemImg}`} />
-      <h3>{itemName}</h3>
-      <h5>${itemPrice}</h5>
-      <h5>Likes: {itemLikes}</h5>
-      <h5>Is sold out? {(itemIsSoldOut) ? <span>Yes</span> : <span>No</span>}</h5>
+      <div className="border p-3">
+        <Row>
+          <Col xs={12}>
+            <img width="100%" src={`${itemImg}`} />
+          </Col>
+          <Col xs={12}>
+            <h1 className="text-secondary">{itemName}</h1>
+          </Col>
+          <Col xs={6}>
+            <h3>¥{currencySeparator(itemPrice)}</h3>
+          </Col>
+          <Col xs={6}>
+            {
+              !!itemLikes &&
+              <h3 className="float-right mr-3">
+                <FontAwesomeIcon icon={faHeart} />
+                {' '}{itemLikes}
+              </h3>
+            }
+          </Col>
+          {
+            itemIsSoldOut &&
+            <div className={classes.soldIcon}>
+              <span>SOLD</span>
+            </div>
+          }
+        </Row>
+      </div>
+
     </Col>
   );
 };
