@@ -3,6 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 import classes from './productBox.module.css';
 import currencySeparator from '../../services/helpers/currencySeparator';
@@ -54,6 +55,15 @@ const ProductBox = ({
 
     </Col>
   );
+};
+
+ProductBox.propTypes = {
+  itemId: PropTypes.string.isRequired,
+  itemName: PropTypes.string.isRequired,
+  itemPrice: PropTypes.number.isRequired,
+  itemLikes: PropTypes.number.isRequired,
+  itemIsSoldOut: PropTypes.bool.isRequired,
+  itemImg: PropTypes.string.isRequired
 };
 
 export default withRouter(ProductBox);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 import ProductBox from '../product-box/ProductBox';
 
@@ -29,6 +30,17 @@ const ProductList = ({ items }) => {
       </Col>
     </Row>
   );
+};
+
+ProductList.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    itemId: PropTypes.string,
+    itemName: PropTypes.string,
+    itemPrice: PropTypes.number,
+    itemLikes: PropTypes.number,
+    itemIsSoldOut: PropTypes.bool,
+    itemImg: PropTypes.string
+  })).isRequired
 };
 
 export default ProductList;
