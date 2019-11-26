@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-import actions from '../../store/items/actions';
-import NotFoundPage from './NotFoundPage';
+import actions from '../../../store/items/actions';
+import NotFoundPage from '../not-found/NotFoundPage';
 
 class DetailPage extends React.Component {
   componentDidMount() {

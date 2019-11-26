@@ -2,9 +2,9 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-import ProductBox from '../product-box/ProductBox';
+import ProductBox from './product-box/ProductBox';
 
-const ProductList = ({ items }) => {
+const ProductBoxList = ({ items }) => {
   const renderProducts = () =>
     items.map(i => (
       <ProductBox
@@ -32,7 +32,7 @@ const ProductList = ({ items }) => {
   );
 };
 
-ProductList.propTypes = {
+ProductBoxList.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
     itemId: PropTypes.string,
     itemName: PropTypes.string,
@@ -43,4 +43,4 @@ ProductList.propTypes = {
   })).isRequired
 };
 
-export default ProductList;
+export default ProductBoxList;

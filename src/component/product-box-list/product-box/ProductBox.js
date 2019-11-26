@@ -6,7 +6,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 import classes from './productBox.module.css';
-import currencySeparator from '../../services/helpers/currencySeparator';
+import currencySeparator from '../../../services/helpers/currencySeparator';
 
 const ProductBox = ({
   itemId,

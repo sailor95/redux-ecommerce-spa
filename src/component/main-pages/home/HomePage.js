@@ -2,9 +2,9 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
-import MyNavbar from '../navbar/MyNavbar';
-import ProductList from '../product-list/ProductList';
-import actions from '../../store/items/actions';
+import MyNavbar from '../../navbar/MyNavbar';
+import ProductBoxList from '../../product-box-list/ProductBoxList';
+import actions from '../../../store/items/actions';
 
 class HomePage extends React.Component {
   componentDidMount() {
@@ -16,7 +16,7 @@ class HomePage extends React.Component {
     return (
       <Container>
         <MyNavbar />
-        <ProductList items={this.props.items.items} />
+        <ProductBoxList items={this.props.items.items} />
       </Container>
     );
   }
