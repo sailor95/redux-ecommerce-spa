@@ -6,15 +6,15 @@ import ProductBox from '../product-box/ProductBox';
 const ProductList = ({ items }) => {
   const renderProducts = () =>
     items.map(i => (
-      <Col xs={6} key={i.id} className="mb-2 border">
-        <ProductBox
-          itemName={i.name}
-          itemPrice={i.price}
-          itemLikes={i.like_count}
-          itemIsSoldOut={i.is_sold_out}
-          itemImg={i.image}
-        />
-      </Col>
+      <ProductBox
+        key={i.id}
+        itemId={i.id}
+        itemName={i.name}
+        itemPrice={i.price}
+        itemLikes={i.like_count}
+        itemIsSoldOut={i.is_sold_out}
+        itemImg={i.image}
+      />
     ));
 
   return (

@@ -5,7 +5,8 @@ module.exports = {
     entry: path.resolve(__dirname, 'src/index'),
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     module: {
         rules: [{
@@ -16,7 +17,8 @@ module.exports = {
     },
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
-        port: 9000
+        port: 9000,
+        historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({

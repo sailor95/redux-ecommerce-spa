@@ -9,7 +9,6 @@ import actions from '../../store/items/actions';
 class HomePage extends React.Component {
   componentDidMount() {
     this.props.getAllItems();
-    this.props.getItemById(1); // NOTE: Testing purpose, delete in the future
     this.props.getAllCategories(); // NOTE: Testing purpose, delete in the future
   }
 
