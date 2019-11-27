@@ -18,13 +18,11 @@ const ProductBox = ({
   history
 }) => {
   return (
-    <Col
-      xs={12}
-      sm={6}
-      className="mb-3"
-      onClick={() => history.push(`/product/${itemId}`)}
-    >
-      <div className="border p-3">
+    <Col xs={12} sm={6} className="mb-3">
+      <div
+        className="border p-3"
+        onClick={() => history.push(`/product/${itemId}`)}
+      >
         <Row>
           <Col xs={12}>
             <img width="100%" src={`${itemImg}`} />
