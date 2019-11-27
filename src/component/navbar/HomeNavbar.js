@@ -1,9 +1,9 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 
-import classes from './myNavbar.module.css';
+import classes from './homeNavbar.module.css';
 
-const MyNavbar = () => (
+const HomeNavbar = () => (
   <Row>
     <Col xs={12} className="d-flex justify-content-center border">
       <div className={classes.navHeight}>
@@ -13,4 +13,4 @@ const MyNavbar = () => (
   </Row>
 );
 
-export default MyNavbar;
+export default HomeNavbar;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
-import MyNavbar from '../../navbar/MyNavbar';
+import HomeNavbar from '../../navbar/HomeNavbar';
 import ProductBoxList from '../../product-box-list/ProductBoxList';
 import actions from '../../../store/items/actions';
 
@@ -15,7 +15,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <Container>
-        <MyNavbar />
+        <HomeNavbar />
         <ProductBoxList items={this.props.items.items} />
       </Container>
     );
