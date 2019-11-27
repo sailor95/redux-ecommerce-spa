@@ -29,14 +29,10 @@ class DetailPage extends React.Component {
 
     return (
       <Container>
-        <DetailPageNavbar />
+        <DetailPageNavbar title={name} />
         <Row>
           <Col>
-            <h1>Detail Page</h1>
-            <div>Product Id: {id}</div>
-            <hr />
             <img width="50%" src={image} />
-            <h3>Product Name: {name}</h3>
             <h5>Likes: {like_count}</h5>
             <h5>Price: ${price}</h5>
             <h5>Shipping Fee: {shipping_fee}</h5>
