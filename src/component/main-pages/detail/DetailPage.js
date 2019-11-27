@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import actions from '../../../store/items/actions';
 import NotFoundPage from '../not-found/NotFoundPage';
@@ -14,6 +16,7 @@ class DetailPage extends React.Component {
 
   render() {
     const { id } = this.props.match.params;
+    const { history } = this.props;
     const {
       name,
       image,
@@ -31,7 +34,14 @@ class DetailPage extends React.Component {
       <Container>
         <Row>
           <Col>
-            <Link to="/">Back to home</Link>
+            <Row>
+              <Col xs={12} className="border">
+                <FontAwesomeIcon
+                  icon={faChevronLeft}
+                  onClick={() => history.push('/')}
+                />
+              </Col>
+            </Row>
             <h1>Detail Page</h1>
             <div>Product Id: {id}</div>
             <hr />
