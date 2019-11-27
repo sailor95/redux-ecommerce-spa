@@ -19,16 +19,16 @@ const ProductBoxList = ({ items }) => {
     ));
 
   return (
-    <Row>
-      <Col xs={12}>
-        <h3>Product List</h3>
-      </Col>
-      <Col xs={12}>
-        <Row>
-          {renderProducts()}
-        </Row>
-      </Col>
-    </Row>
+    <div>
+      <Row>
+        <Col>
+          <h3>Product List</h3>
+        </Col>
+      </Row>
+      <Row>
+        {renderProducts()}
+      </Row>
+    </div>
   );
 };
 

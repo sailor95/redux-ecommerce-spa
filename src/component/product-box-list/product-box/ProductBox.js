@@ -18,7 +18,7 @@ const ProductBox = ({
   history
 }) => {
   return (
-    <Col xs={12} sm={6} className="mb-3">
+    <Col xs={12} md={6} className="mb-3">
       <div
         className={`${classes.box} p-3`}
         onClick={() => history.push(`/product/${itemId}`)}
@@ -27,12 +27,15 @@ const ProductBox = ({
           <Col xs={12}>
             <img width="100%" src={`${itemImg}`} />
           </Col>
+
           <Col xs={12}>
             <h1 className="text-secondary">{itemName}</h1>
           </Col>
+
           <Col xs={6}>
             <h3>¥{currencySeparator(itemPrice)}</h3>
           </Col>
+
           <Col xs={6}>
             {
               !!itemLikes &&
@@ -42,6 +45,7 @@ const ProductBox = ({
               </h3>
             }
           </Col>
+
           {
             itemIsSoldOut &&
             <div className={classes.soldIcon}>
@@ -50,7 +54,6 @@ const ProductBox = ({
           }
         </Row>
       </div>
-
     </Col>
   );
 };
