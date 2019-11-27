@@ -1,12 +1,12 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 import ProductBox from './product-box/ProductBox';
 
 const ProductBoxList = ({ items }) => {
-  const renderProducts = () =>
-    items.map(i => (
+  const renderProductBoxes = arr =>
+    arr.map(i => (
       <ProductBox
         key={i.id}
         itemId={i.id}
@@ -19,16 +19,9 @@ const ProductBoxList = ({ items }) => {
     ));
 
   return (
-    <div>
-      <Row>
-        <Col>
-          <h3>Product List</h3>
-        </Col>
-      </Row>
-      <Row>
-        {renderProducts()}
-      </Row>
-    </div>
+    <Row>
+      {renderProductBoxes(items)}
+    </Row>
   );
 };
 

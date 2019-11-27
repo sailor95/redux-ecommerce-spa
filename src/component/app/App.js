@@ -14,7 +14,7 @@ const App = () => (
   <Provider store={store}>
     <Router history={history}>
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/:category?" component={HomePage} />
         <Route path="/product/:id" component={DetailPage} />
         <Redirect from="/*" to="/" />
       </Switch>
