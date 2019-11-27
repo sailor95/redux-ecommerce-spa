@@ -39,7 +39,8 @@ open http://localhost:9000/
 
 ## Extra Features
 
-(TBD)
+1. Product category filter  
+![Filter Feature](./readme-res/Filter%20Feature.png)
 
 ## Component Tree Design
 
