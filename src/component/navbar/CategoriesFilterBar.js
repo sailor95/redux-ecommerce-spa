@@ -3,11 +3,16 @@ import { Row, Col, Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import PropTypes from 'prop-types';
 
-const CategoriesFilterBar = ({ categories }) => {
+const CategoriesFilterBar = ({
+  categories,
+  getFilteredItems
+}) => {
   const renderCategoriesNav = arr =>
     arr.map(c => (
-      <LinkContainer to={`/${c.name}`} key={c.id}>
-        <Nav.Link active={false}>{c.name}</Nav.Link>
+      <LinkContainer key={c.id} to={`/${c.name}`}>
+        <Nav.Link active={false} onClick={() => getFilteredItems(c.id)}>
+          {c.name}
+        </Nav.Link>
       </LinkContainer>
     ));
 
@@ -20,7 +25,9 @@ const CategoriesFilterBar = ({ categories }) => {
           defaultActiveKey="/"
         >
           <LinkContainer exact to="/">
-            <Nav.Link active={false}>ALL</Nav.Link>
+            <Nav.Link active={false} onClick={() => getFilteredItems('')}>
+              ALL
+            </Nav.Link>
           </LinkContainer>
 
           {renderCategoriesNav(categories)}
@@ -34,7 +41,8 @@ CategoriesFilterBar.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string
-  })).isRequired
+  })).isRequired,
+  getFilteredItems: PropTypes.func.isRequired
 };
 
 export default CategoriesFilterBar;

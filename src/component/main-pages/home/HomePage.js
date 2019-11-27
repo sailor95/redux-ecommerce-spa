@@ -9,15 +9,24 @@ import actions from '../../../store/items/actions';
 
 class HomePage extends React.Component {
   componentDidMount() {
+    if (this.props.match.url !== '/') {
+      this.props.history.push('/');
+    }
+
+    this.props.getAllCategories();
     this.props.getAllItems();
-    this.props.getAllCategories(); // NOTE: Testing purpose, delete in the future
   }
 
   render() {
     return (
       <Container>
         <HomeNavbar />
-        <CategoriesFilterBar categories={this.props.items.categories} />
+
+        <CategoriesFilterBar
+          categories={this.props.items.categories}
+          getFilteredItems={this.props.getFilteredItems}
+        />
+
         <ProductBoxList items={this.props.items.items} />
       </Container>
     );
@@ -30,8 +39,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   getAllItems: actions.getAllItems,
-  getItemById: actions.getItemById,
-  getAllCategories: actions.getAllCategories
+  getAllCategories: actions.getAllCategories,
+  getFilteredItems: actions.getFilteredItems
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

@@ -24,6 +24,12 @@ const reducer = (state = initState, action) => {
         ...state,
         categories: action.payload
       };
+    case ACTION_TYPES.GET_FILTERED_ITEMS: {
+      return {
+        ...state,
+        items: action.payload
+      }
+    }
     case ACTION_TYPES.GET_ALL_ITEMS_FAILED:
     case ACTION_TYPES.GET_ITEM_BY_ID_FAILED:
     case ACTION_TYPES.GET_ALL_CATEGORIES_FAILED:

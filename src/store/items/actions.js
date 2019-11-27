@@ -6,7 +6,8 @@ export const ACTION_TYPES = {
   GET_ITEM_BY_ID_SUCCESS: 'Successfully get item by id',
   GET_ITEM_BY_ID_FAILED: 'Failed to get item by id',
   GET_ALL_CATEGORIES_SUCCESS: 'Successfully get all categories',
-  GET_ALL_CATEGORIES_FAILED: 'Failed to get all categories'
+  GET_ALL_CATEGORIES_FAILED: 'Failed to get all categories',
+  GET_FILTERED_ITEMS: 'Get filtered items'
 };
 
 const actions = {
@@ -52,6 +53,24 @@ const actions = {
       dispatch({
         type: ACTION_TYPES.GET_ALL_CATEGORIES_FAILED,
         payload: []
+      });
+    }
+  },
+  getFilteredItems: id => async dispatch => {
+    const response = await itemsApi.getAllItems();
+
+    if (id) {
+      const filteredItems = response.data.filter(i =>
+        i.category_id == id);
+
+      dispatch({
+        type: ACTION_TYPES.GET_FILTERED_ITEMS,
+        payload: filteredItems
+      });
+    } else {
+      dispatch({
+        type: ACTION_TYPES.GET_FILTERED_ITEMS,
+        payload: response.data
       });
     }
   }
