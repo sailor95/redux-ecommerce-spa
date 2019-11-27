@@ -1,12 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import actions from '../../../store/items/actions';
 import NotFoundPage from '../not-found/NotFoundPage';
+import DetailPageNavbar from './detail-page-navbar/DetailPageNavbar';
 
 class DetailPage extends React.Component {
   componentDidMount() {
@@ -16,7 +14,6 @@ class DetailPage extends React.Component {
 
   render() {
     const { id } = this.props.match.params;
-    const { history } = this.props;
     const {
       name,
       image,
@@ -32,16 +29,9 @@ class DetailPage extends React.Component {
 
     return (
       <Container>
+        <DetailPageNavbar />
         <Row>
           <Col>
-            <Row>
-              <Col xs={12} className="border">
-                <FontAwesomeIcon
-                  icon={faChevronLeft}
-                  onClick={() => history.push('/')}
-                />
-              </Col>
-            </Row>
             <h1>Detail Page</h1>
             <div>Product Id: {id}</div>
             <hr />

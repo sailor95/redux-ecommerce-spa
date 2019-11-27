@@ -1,0 +1,8 @@
+.navHeight {
+  height: 5vh;
+  color: grey;
+}
+
+.navHeight:hover {
+  color: black;
+}

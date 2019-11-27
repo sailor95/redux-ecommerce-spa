@@ -1,0 +1,10 @@
+.navHeight {
+  height: 5vh;
+  display: table;
+}
+
+.navTitle {
+  font-size: 2rem;
+  display: table-cell;
+  vertical-align: middle;
+}
