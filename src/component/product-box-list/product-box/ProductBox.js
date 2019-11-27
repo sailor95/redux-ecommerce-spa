@@ -20,7 +20,7 @@ const ProductBox = ({
   return (
     <Col xs={12} sm={6} className="mb-3">
       <div
-        className="border p-3"
+        className={`${classes.box} p-3`}
         onClick={() => history.push(`/product/${itemId}`)}
       >
         <Row>
