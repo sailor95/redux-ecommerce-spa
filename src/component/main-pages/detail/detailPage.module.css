@@ -1,0 +1,44 @@
+.imgBackground {
+  background-color: lightgrey;
+}
+
+.likeBtn {
+  width: 8rem;
+  height: 3rem;
+  border: solid lightgrey;
+  border-radius: 50px;
+  background-color: lightgrey;
+}
+
+.likeBtn:hover {
+  border: solid black;
+}
+
+.likeBtnLikeIcon {
+  color: grey;
+}
+
+.likeBtnLikeCount {
+  color: grey;
+  font-size: 1.5rem;
+  pointer-events: none;
+}
+
+.descriptionContent {
+  height: 500px;
+}
+
+.descriptionText {
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+.floatBar {
+  position: fixed;
+  background-color: brown;
+  bottom: 0;
+  right: 0;
+  height: 4rem;
+  width: 100%;
+  color: white;
+}
