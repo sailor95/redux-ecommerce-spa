@@ -1,0 +1,11 @@
+.fixBar {
+  position: fixed;
+  background-color: brown;
+  bottom: 0;
+  right: 0;
+  height: 4rem;
+  width: 100%;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+}

@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 import classes from './detailPage.module.css';
 import actions from '../../../store/items/actions';
 import NotFoundPage from '../not-found/NotFoundPage';
-import DetailPageNavbar from './detail-page-navbar/DetailPageNavbar';
+import DetailPageNavbar from './navbar/DetailPageNavbar';
+import DetailPageLikeButton from './like-button/DetailPageLikeButton';
+import DetailPageFooter from './footer/DetailPageFooter';
 
 class DetailPage extends React.Component {
   componentDidMount() {
@@ -33,36 +33,28 @@ class DetailPage extends React.Component {
     return (
       <Container>
         <DetailPageNavbar title={name} />
+
         <Row>
           <Col
-            xs={12}
             className={`d-flex justify-content-center ${classes.imgBackground}`}
           >
             <img width="50%" src={image} />
           </Col>
-          <Col xs={12}>
-            <h1>{name}</h1>
-          </Col>
-          <Col xs={12}>
-            <div className={`${classes.likeBtn} d-flex mt-3 mb-3`}>
-              <FontAwesomeIcon
-                icon={faHeart}
-                size="2x"
-                className={`${classes.likeBtnLikeIcon} my-auto ml-4`}
-              />
-              <div className={`${classes.likeBtnLikeCount} ml-3`}>
-                {like_count}
-              </div>
-            </div>
-          </Col>
-          <Col xs={12} className={classes.descriptionContent}>
-            <p>Description: {description}</p>
-          </Col>
-          <Col xs={12} className={`${classes.floatBar} d-flex`}>
-            <h5 className="my-auto ml-4">Price: ${price}</h5>
-            <h5 className="my-auto ml-4">Shipping Fee: {shipping_fee}</h5>
-          </Col>
         </Row>
+
+        <h1>{name}</h1>
+
+        <DetailPageLikeButton like_count={like_count} />
+
+        <hr />
+
+        <div className={classes.descriptionContent}>
+          <p>Product Description:</p>
+          <p className={classes.descriptionText}>{description}</p>
+          <p className={classes.footerStepOver}></p>
+        </div>
+
+        <DetailPageFooter price={price} shipping_fee={shipping_fee} />
       </Container>
     );
   }
