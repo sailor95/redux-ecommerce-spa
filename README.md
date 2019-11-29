@@ -47,7 +47,7 @@ open http://localhost:9000/
 
 ## Extra Features
 
-1. Product category filter  
+1. Product categories filter  
 ![Filter Feature](./readme-res/Filter%20Feature.png)
 
 2. Unit test for main components
@@ -56,7 +56,7 @@ open http://localhost:9000/
 yarn test
 ```
 
-See test plan [here](##Test%20Plan).
+See test plan [here](##Test%20Plan)
 
 ## Component Tree Design
 
