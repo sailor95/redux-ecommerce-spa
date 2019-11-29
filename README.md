@@ -56,7 +56,7 @@ open http://localhost:9000/
 yarn test
 ```
 
-See test plan [here](##Test%20Plan)
+See **Test Plan** section below.
 
 ## Component Tree Design
 
