@@ -26,6 +26,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   foreman
@@ -33,4 +34,4 @@ DEPENDENCIES
   sinatra-contrib
 
 BUNDLED WITH
-   1.11.2
+   1.17.3

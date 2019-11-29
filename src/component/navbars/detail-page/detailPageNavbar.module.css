@@ -1,0 +1,13 @@
+.navHeight {
+  height: 5vh;
+  color: grey;
+}
+
+.navHeight:hover {
+  color: black;
+}
+
+.title {
+  font-size: 2rem;
+  margin-left: -1.5rem;
+}

@@ -1,0 +1,16 @@
+.imgBackground {
+  background-color: lightgrey;
+}
+
+.descriptionContent {
+  height: 500px;
+}
+
+.descriptionText {
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+.footerStepOver {
+  height: 4rem;
+}
