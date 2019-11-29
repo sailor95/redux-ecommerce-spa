@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import classes from './detailPage.module.css';
 import actions from '../../../store/items/actions';
 import NotFoundPage from '../not-found/NotFoundPage';
-import DetailPageNavbar from '../../navbar/DetailPageNavbar';
+import DetailPageNavbar from '../../navbars/detail-page/DetailPageNavbar';
 import DetailPageLikeButton from './like-button/DetailPageLikeButton';
 import DetailPageFooter from './footer/DetailPageFooter';
 

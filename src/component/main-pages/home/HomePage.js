@@ -2,8 +2,8 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
-import HomeNavbar from '../../navbar/HomeNavbar';
-import CategoriesFilterBar from '../../navbar/CategoriesFilterBar';
+import HomeNavbar from '../../navbars/home-page/HomeNavbar';
+import CategoriesFilterBar from '../../navbars/categories-filter/CategoriesFilterBar';
 import ProductBoxList from '../../product-box-list/ProductBoxList';
 import actions from '../../../store/items/actions';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-import DetailPageNavbar from '../../navbar/DetailPageNavbar';
+import DetailPageNavbar from '../../navbars/detail-page/DetailPageNavbar';
 
 const NotFoundPage = ({ id }) => (
   <Container>
