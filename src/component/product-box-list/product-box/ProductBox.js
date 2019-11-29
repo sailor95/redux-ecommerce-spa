@@ -21,7 +21,7 @@ const ProductBox = ({
     <Col xs={12} md={6} className="mb-3">
       <div
         className={`${classes.box} p-3`}
-        onClick={() => history.push(`/product/${itemId}`)}
+        onClick={() => history.push(`/detail/${itemId}`)}
       >
         <Row>
           <Col xs={12}>

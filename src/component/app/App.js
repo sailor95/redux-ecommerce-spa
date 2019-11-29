@@ -13,7 +13,7 @@ const App = () => (
     <Router history={history}>
       <Switch>
         <Route exact path="/:category?" component={HomePage} />
-        <Route path="/product/:id" component={DetailPage} />
+        <Route path="/detail/:id" component={DetailPage} />
         <Redirect from="/*" to="/" />
       </Switch>
     </Router>
