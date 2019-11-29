@@ -21,10 +21,18 @@ open http://localhost:9000/
 
 - react
 - redux
-- CSS module
 - axios
 - react-router
 - redux-thunk
+- CSS module
+- jest
+- enzyme
+- webpack
+- babel
+
+## Project Planning & Roadmap
+
+![Project Roadmap](./readme-res/Planning.png)
 
 ## Requirements Checklist
 
@@ -42,6 +50,14 @@ open http://localhost:9000/
 1. Product category filter  
 ![Filter Feature](./readme-res/Filter%20Feature.png)
 
+2. Unit test for main components
+
+```bash
+yarn test
+```
+
+See test plan [here](##Test%20Plan).
+
 ## Component Tree Design
 
 ### Home Page
@@ -51,3 +67,45 @@ open http://localhost:9000/
 ### Product Detail Page
 
 ![Product Detail Page](./readme-res/Detail%20Page%20Design.png)
+
+## Test Plan
+
+### React Components
+
+App:
+
+- Should render **Home Page** as default route
+- Should render **Home Page** when URL path is not defined
+- Should render **Detail Page** for URL: `/detail/{id}` when id exists in DB
+- Should render **Not Found Page** for URL: `/detail/{id}` when id does NOT exist in DB
+
+Home Page:
+
+- Should render main navbar
+- Should render categories filter bar
+- Should render product box list
+
+Detail Page:
+
+- Should render detail nav
+- Should render like button
+- Should render: img/title/description
+- Should render fixed footer
+
+Category Filter Bar:
+
+- Should render multiple categories with 'categories' prop
+
+Product Box List:
+
+- Should render multiple product box with 'items' prop
+
+Product Box:
+
+- Should redirect to detail page on click
+- Should contain item img/name/price/likes
+- Should be able to show 'SOLD' status
+
+Fixed Footer:
+
+- Should render: price/shipping fee
